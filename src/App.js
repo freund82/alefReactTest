@@ -1,11 +1,13 @@
 import Header from "./components/Header/Header";
-import MainSection from "./components/MainSection/MainSection";
+import FirstSection from "./components/FirstSection/FirstSection";
+import SecondSection from "./components/SecondSection/SecondSection";
 
 function App() {
   return (
     <>
       <Header></Header>
-      <MainSection></MainSection>
+      <FirstSection></FirstSection>
+      <SecondSection></SecondSection>
     </>
   );
 }

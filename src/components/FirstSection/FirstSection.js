@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Responces from './Responces';
 import Select from './Select';
 import {useState} from 'react'
+import Description from './Description';
 
 
 const MainPhoto=styled.div`
@@ -165,9 +166,9 @@ border:none;
 }
 `;
 
-function MainSection(){
+function FirstSection(){
       
-     let ar="Арт. 02765/46"
+     let art="Арт. 02765/46"
 
      let[value, setState]=useState(1)
 
@@ -181,11 +182,10 @@ function MainSection(){
         }
     }
     function addToCart(){
-        alert('Товар добавлен в корзину')
+        alert(`Товар ${art} в количестве ${value} шт. добавлен в корзину`)
     }
-
     function addToFavorite(){
-        alert('Товар добавлен в избранное')
+        alert(`Товар ${art} добавлен в избранное`)
     }
 
     return(
@@ -195,7 +195,7 @@ function MainSection(){
             <Photo src={ImageMain}></Photo>
             <OderDescription>
             <Title>Пижама для девочек</Title>
-            <Art>{ar}</Art>
+            <Art>{art}</Art>
             <Responces></Responces>
             <Price>800 &#8381;</Price><OldPrice>1 500 &#8381;</OldPrice>
             <ActionsBlock>
@@ -219,11 +219,13 @@ function MainSection(){
                                 </ButtonsBlock>
                             <Link style={{display:"block", textDecoration:"underline", fontSize:"1.4rem", color:"#333", letterSpacing:"0.04em",  textDecorationSkipInk:"none", marginBottom:"2.9rem"}} to="/">Купить в 1 клик</Link>
                             <LineBlock></LineBlock>
+                            <Description></Description>
             </OderDescription>
+            <Link style={{display:"block", margin:"auto", textDecoration:"underline", fontSize:"1.4rem", color:"#333", letterSpacing:"0.04em",  textDecorationSkipInk:"none", paddingTop:"1.2rem", marginBottom:"3.2rem",}} to="/">Посмотреть все стили</Link>
             </Router>
         </MainPhoto>
         </>
     )
 }
 
-export default MainSection
+export default FirstSection
