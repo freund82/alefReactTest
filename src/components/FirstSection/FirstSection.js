@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import ImageMain from '../../assets/images/oder/boy.png'
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Responces from './Responces';
 import Select from './Select';
 import {useState} from 'react'
@@ -146,12 +146,18 @@ const AddtoCart=styled.span`
     height:4.4rem;
     background:#333;
     margin-right:0.4rem;
+    &:hover{
+        background:black;
+    }
 `;
 
 const Like=styled.span`
     width:4.4rem;
     height:4.4rem;
     background:#333;
+    &:hover{
+        background:black;
+    }
 `;
 
 const LineBlock=styled.hr`
@@ -183,6 +189,7 @@ function FirstSection(){
     }
     function addToCart(){
         alert(`Товар ${art} в количестве ${value} шт. добавлен в корзину`)
+       
     }
     function addToFavorite(){
         alert(`Товар ${art} добавлен в избранное`)
@@ -191,7 +198,6 @@ function FirstSection(){
     return(
         <>
         <MainPhoto>
-        <Router>
             <Photo src={ImageMain}></Photo>
             <OderDescription>
             <Title>Пижама для девочек</Title>
@@ -222,7 +228,6 @@ function FirstSection(){
                             <Description></Description>
             </OderDescription>
             <Link style={{display:"block", margin:"auto", textDecoration:"underline", fontSize:"1.4rem", color:"#333", letterSpacing:"0.04em",  textDecorationSkipInk:"none", paddingTop:"1.2rem", marginBottom:"3.2rem",}} to="/">Посмотреть все стили</Link>
-            </Router>
         </MainPhoto>
         </>
     )

@@ -3,6 +3,7 @@ import Line from '../../assets/images/line.png'
 
 const SelectBlock=styled.div`
     position:relative;
+    z-index:100;
     margin-bottom:1.2rem;
 `;
 
@@ -20,6 +21,7 @@ const SelectSize=styled.select`
 
 const SelectLine=styled.img`
     position:absolute;
+    z-index:1000;
     left:28rem;
     top:1.8rem;
     pointer-events: none;

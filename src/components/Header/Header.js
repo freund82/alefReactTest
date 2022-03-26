@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import {Link} from 'react-router-dom'
 
 const HeaderBlock=styled.header`
     width:100%;
@@ -7,6 +7,7 @@ const HeaderBlock=styled.header`
     display:flex;
     margin:0 auto;
     position:fixed;
+    z-index:5000;
     box-shadow: 0 0.5rem 0.2rem rgba(237, 237, 237, 0.8);
     background:#fff;
 `;
@@ -28,6 +29,20 @@ const MenuNav=styled.div`
     padding-left:4.95rem;
 `;
 
+const CartIcon=styled.span`
+display:none;
+width:0.6rem;
+height:0.6rem;
+border: 0.6rem solid red;
+background:red;
+border-radius:50%;
+margin-left:1rem;
+cursor:pointer;
+position:absolute;
+top:20%;
+
+`;
+
 function Header(){
     return(
        <>
@@ -35,7 +50,6 @@ function Header(){
                 <HeaderInner>
                 <h1>LOGO</h1>
                 <MenuNav>
-                    <Router>
                 <Link to="/"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="8.45945" cy="4.18919" r="3.68919" stroke="#333333"/>
                             <path d="M0.5 15.3379H15.5" stroke="#333333"/>
@@ -54,8 +68,8 @@ function Header(){
                                 <path d="M7.99999 12.5C7.99999 12.5 7.78329 4 12 4C16.2167 4 16 12.5 16 12.5" stroke="#333333"/>
                                 </svg>
                             </Link>
+                            <CartIcon class="cart"></CartIcon>
                         </div>
-                        </Router>
                 </MenuNav>
                 </HeaderInner>
             </HeaderBlock>
