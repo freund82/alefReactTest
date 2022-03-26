@@ -21,7 +21,21 @@ const HeaderInner=styled.div`
     padding-right:2.6rem;
 `;
 
+const MobileMenu=styled.nav`
+display:none;
+position:absolute;
+top:0%;
+right:0%;
+z-index:6000;
+width:37.5rem;
+height:27.7rem;
+background:#fff;
+
+`;
+
 const MenuNav=styled.div`
+position:relative:
+z-index:5000;
     width:16.8rem;
     display:flex;
     justify-content:space-between;
@@ -42,6 +56,42 @@ position:absolute;
 top:20%;
 
 `;
+
+
+const MenuClose=styled.svg`
+ position:absolute;
+ top:1rem;
+ right:1rem;
+ z-index:6000;
+`;
+
+const LinkMobileItem=styled(Link)`
+    text-decoration:none;
+    font-size:1.4rem;
+    color:#333;
+    letter-spacing:0.04em;
+    &:hover{
+        font-weight:bold;
+    }
+`;
+
+const List=styled.ul`
+    list-style:none;
+    margin-top:7rem;
+    line-height: 5rem;
+    font-size:1.2rem;
+`;
+
+const BurgerMenu=styled.div`
+    display:none;
+   @media(max-width:700px){
+       display:block;
+       &:hover ${MobileMenu}{
+        display:block;
+    }
+   }
+`;
+
 
 function Header(){
     return(
@@ -68,8 +118,28 @@ function Header(){
                                 <path d="M7.99999 12.5C7.99999 12.5 7.78329 4 12 4C16.2167 4 16 12.5 16 12.5" stroke="#333333"/>
                                 </svg>
                             </Link>
-                            <CartIcon class="cart"></CartIcon>
+                            <CartIcon className="cart"></CartIcon>
                         </div>
+                        <BurgerMenu>
+                        <Link to="/"><svg  width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line y1="0.5" x2="18" y2="0.5" stroke="#333333"/>
+                            <line y1="12.5" x2="18" y2="12.5" stroke="#333333"/>
+                            <line y1="6.5" x2="18" y2="6.5" stroke="#333333"/>
+                        </svg></Link>
+                        <MobileMenu>
+                            <Link to="/"><MenuClose width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="5.01046" y1="18.2822" x2="18.6464" y2="4.6462" stroke="#333333"/>
+                                    <line y1="-0.5" x2="19.2842" y2="-0.5" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 19 18.6357)" stroke="#333333"/>
+                                </MenuClose>
+                            </Link>
+                                <List>
+                                    <LinkMobileItem to="/"><li>ПОСТЕЛЬНОЕ БЕЛЬЕ</li></LinkMobileItem>
+                                    <LinkMobileItem to="/"><li>ОДЕЖДА ДЛЯ ДОМА</li></LinkMobileItem>
+                                    <LinkMobileItem to="/"><li>ОДЕЖДА ДЛЯ УЛИЦЫ</li></LinkMobileItem>
+                                    <LinkMobileItem to="/"><li>ВЫХОД</li></LinkMobileItem>
+                                </List>
+                        </MobileMenu>
+                        </BurgerMenu>
                 </MenuNav>
                 </HeaderInner>
             </HeaderBlock>

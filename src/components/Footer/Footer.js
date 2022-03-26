@@ -74,6 +74,9 @@ const MailButton=styled.button`
     cursor:pointer;
     font-size:1.4rem;
     letter-spacing: 0.04em;
+    &:hover{
+        background:#F2F2F2;
+    }
 `;
 
 function Footer(){
@@ -110,7 +113,7 @@ function validMail(){
             <MailBlock>
             <FooterHeadText className="mailSign">УЗНАЙТЕ ПЕРВЫМИ О НОВИНКАХ И АКЦИЯХ</FooterHeadText>
             <Mail onChange={handleChange} type="email" name="email" placeholder="Адрес электронной почты"></Mail>
-                <MailDelete class="input_delete" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <MailDelete width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.700012 9.06641L9.05007 0.88337" stroke="#C4C4C4"/>
                     <path d="M9.25165 9.06641L0.901606 0.883353" stroke="#C4C4C4"/>
                 </MailDelete>

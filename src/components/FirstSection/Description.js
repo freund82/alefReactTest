@@ -33,7 +33,7 @@ function Description(){
                     <Link style={{textDecoration:"underline", fontSize:"1.4rem", color:"#333", letterSpacing:"0.04em", textDecorationSkipInk:"none"}} to="/">Описание товара</Link>
             </IconBlock>
             <IconBlock>
-                <Icon class="clock" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <Icon  width="16" height="16" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="9" cy="9" r="7" fill="white" stroke="#333333"/>
                     <path d="M8.55453 4.5L8.55453 9.70613L12.5 12" stroke="#333333"/>
                 </Icon>

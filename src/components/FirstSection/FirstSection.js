@@ -5,6 +5,11 @@ import Responces from './Responces';
 import Select from './Select';
 import {useState} from 'react'
 import Description from './Description';
+import image1 from '../../assets/images/oder/oderSmall/2-1.png'
+import image2 from '../../assets/images/oder/oderSmall/3-1.png'
+import image3 from '../../assets/images/oder/oderSmall/4-1.png'
+import image4 from '../../assets/images/oder/oderSmall/5-1.png'
+
 
 
 const MainPhoto=styled.div`
@@ -172,6 +177,34 @@ border:none;
 }
 `;
 
+const PhotoBlock=styled.div`
+    position:relative;
+    z-index:100;
+`;
+
+const SmallPhotoBlock=styled.div`
+width:7.1rem;
+height:48.6rem;
+position:absolute;
+top:2.6rem;
+left:2.4rem;
+z-index:1000;
+display:flex;
+flex-wrap:wrap;
+@media(max-width:700px){
+    display:none;
+}
+`
+const SmallPhoto=styled.img`
+opacity:0.7;
+&:hover {
+    opacity:1;
+}
+`;
+
+
+
+
 function FirstSection(){
       
      let art="Арт. 02765/46"
@@ -189,16 +222,41 @@ function FirstSection(){
     }
     function addToCart(){
         alert(`Товар ${art} в количестве ${value} шт. добавлен в корзину`)
+        var cartOder=document.querySelector(".cart")
+        cartOder.style.display="block"
        
     }
     function addToFavorite(){
         alert(`Товар ${art} добавлен в избранное`)
     }
 
+    function changePhoto(){
+        let div = document.querySelectorAll('.small')
+        let mainImage=document.querySelector('.main')
+
+    Array.from(div).forEach((item) => {
+        item.addEventListener('mouseover', (e)=>{
+        
+          var attribute=e.target.getAttribute('src')
+          mainImage.setAttribute('src', attribute)
+                
+        });
+      });
+    }
+
     return(
         <>
         <MainPhoto>
-            <Photo src={ImageMain}></Photo>
+            <PhotoBlock>
+            <Photo className="main" src={ImageMain}></Photo>
+            <SmallPhotoBlock onMouseMove={changePhoto}>
+                <SmallPhoto className="small" src={ImageMain} width="71" height="91" alt=""></SmallPhoto>
+                <SmallPhoto className="small" src={image1} width="71" height="91" alt=""></SmallPhoto>
+                <SmallPhoto className="small" src={image2} width="71" height="91" alt=""></SmallPhoto>
+                <SmallPhoto className="small" src={image3} width="71" height="91" alt=""></SmallPhoto>
+                <SmallPhoto className="small" src={image4} width="71" height="91" alt=""></SmallPhoto>
+            </SmallPhotoBlock>
+            </PhotoBlock>
             <OderDescription>
             <Title>Пижама для девочек</Title>
             <Art>{art}</Art>
