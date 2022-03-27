@@ -219,6 +219,14 @@ const Buy=styled(Link)`
     margin-bottom:2.9rem;
 `;
 
+const FindSize=styled(Link)`
+text-decoration:underline;
+font-size:1.4rem;
+color:#333;
+letter-spacing:0.04em;
+text-decoration-skip-ink:none;
+`;
+
 
 
 
@@ -283,7 +291,7 @@ function FirstSection(){
                 <Discount><span>cкидка <span>-36%</span></span></Discount><Action>акция <span>-20%</span></Action>
             </ActionsBlock>
                            <Select></Select>
-                                <Link style={{textDecoration:"underline", fontSize:"1.4rem", color:"#333", letterSpacing:"0.04em",  textDecorationSkipInk:"none"}} to="/">Определить размер</Link>
+                                <FindSize style={{}} to="/">Определить размер</FindSize>
                                 <ButtonsBlock>
                                     <Counter>
                                         <Plus onClick={addGood}>+</Plus>

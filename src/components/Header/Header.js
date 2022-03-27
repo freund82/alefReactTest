@@ -123,7 +123,7 @@ function Header(){
             if (currentScroll < prevScroll && headerHidden()) {
               header.classList.remove('header_hidden')
             }
-      
+
             prevScroll = currentScroll
       
           })
