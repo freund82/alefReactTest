@@ -35,6 +35,12 @@ const SecondBlock=styled.div`
 const SecondBlockMain=styled.img`
     max-width:100%;
     line-height:0;
+    @media(max-width:900px){
+        margin-bottom:1rem;
+    }
+    @media(max-width:700px){
+        margin-bottom:0;
+    }
 `
 
 const SecondBlockSmallPhotos=styled.div`

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Responses =styled.p`
+const Responses=styled.p`
 display:flex;
 align-items:center;
 font-size:1.4rem;

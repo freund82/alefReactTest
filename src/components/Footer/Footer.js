@@ -38,6 +38,12 @@ const MailBlock=styled.div`
     position:relative;
     z-index:100;
     width:45.2rem;
+    @media(max-width:900px){
+        margin-top:5.8rem;
+    }
+    @media(max-width:700px){
+        margin-top:0;
+    }
 `;
 const Mail=styled.input`
     width:100%;

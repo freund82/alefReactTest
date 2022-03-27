@@ -10,6 +10,9 @@ const HeaderBlock=styled.header`
     z-index:5000;
     box-shadow: 0 0.5rem 0.2rem rgba(237, 237, 237, 0.8);
     background:#fff;
+    @media(max-width:700px){
+        box-shadow:none;
+    }
 `;
 const HeaderInner=styled.div`
     width:144rem;
@@ -41,6 +44,9 @@ z-index:5000;
     justify-content:space-between;
     align-items:center;
     padding-left:4.95rem;
+    @media(max-width:700px){
+        padding-left:0;
+    }
 `;
 
 const CartIcon=styled.span`
@@ -93,10 +99,43 @@ const BurgerMenu=styled.div`
 `;
 
 
+
 function Header(){
+ 
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const onScrollHeader = () => {
+      
+          const header = document.querySelector('.header') 
+      
+          let prevScroll = window.pageYOffset 
+          let currentScroll 
+      
+          window.addEventListener('scroll', () => { 
+      
+            currentScroll = window.pageYOffset 
+      
+            const headerHidden = () => header.classList.contains('header_hidden') 
+      
+            if (currentScroll > prevScroll && !headerHidden()) { 
+              header.classList.add('header_hidden')
+            }
+            if (currentScroll < prevScroll && headerHidden()) {
+              header.classList.remove('header_hidden')
+            }
+      
+            prevScroll = currentScroll
+      
+          })
+      
+        }
+      
+        onScrollHeader()
+      
+      });
     return(
        <>
-            <HeaderBlock>
+            <HeaderBlock className="header">
                 <HeaderInner>
                 <h1>LOGO</h1>
                 <MenuNav>

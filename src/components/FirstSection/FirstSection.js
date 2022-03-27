@@ -25,6 +25,7 @@ const MainPhoto=styled.div`
     @media(max-width:700px){
         width:100%;
        margin:0 auto;
+       padding-top:4rem;
         padding-left:0;
         padding-right:0;
     }
@@ -42,6 +43,8 @@ const Photo=styled.img`
 `;
 
 const OderDescription=styled.div`
+position:relative;
+z-index:100;
     width:68.6rem;
     padding-top:2.4rem;
     @media(max-width:1200px){
@@ -171,15 +174,18 @@ height:0.1rem;
 background:rgba(196, 196, 196, 1);
 border:none;
 @media(max-width:700px){
-    width:100%;
-   padding-left:0;
-   padding-right:0;
+    position:absolute;
+    z-index:1000;
+    width:37.5rem;
+    left:0%;
+   margin:0 auto;
 }
 `;
 
 const PhotoBlock=styled.div`
     position:relative;
     z-index:100;
+    margin:auto;
 `;
 
 const SmallPhotoBlock=styled.div`
@@ -200,6 +206,17 @@ opacity:0.7;
 &:hover {
     opacity:1;
 }
+`;
+
+const Buy=styled(Link)`
+    margin-top:2.1rem;
+    display:block;
+    text-decoration:underline;
+    font-size:1.4rem;
+    color:#333;
+    letter-spacing:0.04em;
+    text-decoration-skip-ink:none;
+    margin-bottom:2.9rem;
 `;
 
 
@@ -281,7 +298,7 @@ function FirstSection(){
                                         </svg></Link>
                                         </Like>
                                 </ButtonsBlock>
-                            <Link style={{display:"block", textDecoration:"underline", fontSize:"1.4rem", color:"#333", letterSpacing:"0.04em",  textDecorationSkipInk:"none", marginBottom:"2.9rem"}} to="/">Купить в 1 клик</Link>
+                            <Buy to="/">Купить в 1 клик</Buy>
                             <LineBlock></LineBlock>
                             <Description></Description>
             </OderDescription>

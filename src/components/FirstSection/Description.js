@@ -8,6 +8,9 @@ const DescriptionLinks=styled.div`
     height:8.4rem;
     flex-wrap:wrap;
     line-height:2rem;
+    @media(max-width:700px){
+        margin-top:5.3rem;
+    }
 `;
 const Icon=styled.svg`
     margin-right:0.65rem;

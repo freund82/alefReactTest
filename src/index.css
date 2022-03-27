@@ -25,7 +25,11 @@ p{
   filter:opacity(0.7);
 }
 
-
+.header_hidden {
+  opacity:0.5;
+  transition-duration: .5s;
+  opacity:0;
+}
 
 @media(max-width:700px){
   .mailSign{
