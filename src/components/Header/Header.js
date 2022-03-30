@@ -121,13 +121,12 @@ function Header(){
               header.classList.add('header_hidden')
             }
             if (currentScroll < prevScroll && headerHidden()) {
-              header.classList.remove('header_hidden')
+             header.classList.remove('header_hidden')
             }
-
+            
             prevScroll = currentScroll
-      
+
           })
-      
         }
       
         onScrollHeader()
